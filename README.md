@@ -1,12 +1,22 @@
 # URL Shortener: MERN Stack Application
 
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Stack](https://img.shields.io/badge/Stack-MERN-blue.svg)
-![Frontend](https://img.shields.io/badge/Frontend-React%20%7C%20Vite%20%7C%20TailwindCSS-brightgreen.svg)
-![Backend](https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-red.svg)
+## 🚀 Live Demo
+
+**🌐 Live Application**: [https://shortendurl-767b.vercel.app/](https://shortendurl-767b.vercel.app/)
+
+**🔐 Admin Panel**: [https://shortendurl-767b.vercel.app/login](https://shortendurl-767b.vercel.app/login)
+- Username: `admin`
+- Password: `password123`
+
+**📡 Backend API**: [https://shortendurl-backend.onrender.com/](https://shortendurl-backend.onrender.com/)
+
+**📂 Source Code**: [https://github.com/Rahulsaini27/shortendurl](https://github.com/Rahulsaini27/shortendurl)
+
+---
 
 ## Table of Contents
 
+- [🚀 Live Demo](#-live-demo)
 - [Introduction](#introduction)
 - [Features](#features)
 - [Technology Stack](#technology-stack)
@@ -36,6 +46,8 @@
 This project is a robust and modern URL Shortener application built using the MERN (MongoDB, Express, React, Node.js) stack, enhanced with Vite for a lightning-fast frontend development experience and Tailwind CSS for a highly customizable and attractive user interface.
 
 The core objective is to allow users to submit long URLs and receive a compact, shortened version. Visiting the generated short URL will seamlessly redirect the user to the original destination. Additionally, it features a protected admin panel for monitoring shortened URLs and their visit analytics.
+
+**🎯 Try it live**: Visit [https://shortendurl-767b.vercel.app/](https://shortendurl-767b.vercel.app/) to see the application in action!
 
 ## 2. Features
 
@@ -71,6 +83,11 @@ This application leverages a powerful and modern set of technologies:
 - **Valid-URL**: A utility for validating URLs.
 - **Dotenv**: For loading environment variables from a .env file.
 - **CORS**: Middleware to enable Cross-Origin Resource Sharing.
+
+### Deployment:
+- **Frontend**: Deployed on **Vercel** - [https://shortendurl-767b.vercel.app/](https://shortendurl-767b.vercel.app/)
+- **Backend**: Deployed on **Render** - [https://shortendurl-backend.onrender.com/](https://shortendurl-backend.onrender.com/)
+- **Database**: MongoDB Atlas (Cloud)
 
 ## 4. Project Structure
 
@@ -139,8 +156,8 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the repository:**
    ```bash
-   git clone <YOUR_GITHUB_REPO_LINK>
-   cd url-shortener-mern
+   git clone https://github.com/Rahulsaini27/shortendurl
+   cd shortendurl
    ```
 
 2. **Navigate to the backend directory and install dependencies:**
@@ -242,13 +259,13 @@ Ensure both your backend and frontend are running in separate terminal windows:
 
 **Terminal 1 (Backend):**
 ```bash
-cd url-shortener-mern/server
+cd shortendurl/server
 npm run dev
 ```
 
 **Terminal 2 (Frontend):**
 ```bash
-cd url-shortener-mern/client
+cd shortendurl/client
 npm run dev
 ```
 
@@ -256,30 +273,35 @@ Once both are running, open your web browser and navigate to `http://localhost:5
 
 ## 6. Usage and Demo
 
-### User Interface (http://localhost:5173)
+### Live Demo Usage
+
+**🌐 Visit the Live Application**: [https://shortendurl-767b.vercel.app/](https://shortendurl-767b.vercel.app/)
+
+### User Interface
 
 **Shorten a URL:**
 1. On the homepage, you'll find an input field.
 2. Enter a long URL (e.g., `https://www.example.com/a/very/long/path/to/a/resource`).
 3. Click the "Shorten URL" button.
 4. A loading spinner will appear briefly.
-5. Upon success, a green box will display your new short URL (e.g., `http://localhost:5000/abc123`).
+5. Upon success, a green box will display your new short URL.
 
 **Copy and Test:**
 1. Click the "Copy URL" button next to the shortened URL to copy it to your clipboard.
 2. Click the displayed short URL. This will open it in a new tab, and you should be redirected to the original long URL.
 
-### Admin Panel (http://localhost:5173/admin)
+### Admin Panel
 
-**Accessing the Panel:**
-1. From the homepage, click the "Admin" link in the top right corner, or directly navigate to `http://localhost:5173/admin`.
-2. You will be redirected to the login page if you are not already logged in.
+**🔐 Accessing the Live Admin Panel**: [https://shortendurl-767b.vercel.app/login](https://shortendurl-767b.vercel.app/login)
 
-**Login:**
-1. Enter the admin credentials:
-   - **Username**: `admin` (or whatever you set in `ADMIN_USERNAME`)
-   - **Password**: `password123` (or whatever you set in `ADMIN_PASSWORD`)
-2. Click "Log In".
+**Login Credentials:**
+- **Username**: `admin`
+- **Password**: `password123`
+
+**Login Process:**
+1. Navigate to the admin login page using the link above.
+2. Enter the admin credentials provided above.
+3. Click "Log In".
 
 **Viewing Shortened URLs:**
 1. Upon successful login, you will see a table listing all URLs that have been shortened through the application.
@@ -352,26 +374,40 @@ The frontend is a single-page application built with React, bundled by Vite, and
 
 ## 9. Deployment
 
-To deploy this application:
+This application is currently deployed and live:
 
-### Frontend (Client):
+### 🚀 Live Deployment
+- **Frontend (Vercel)**: [https://shortendurl-767b.vercel.app/](https://shortendurl-767b.vercel.app/)
+- **Backend (Render)**: [https://shortendurl-backend.onrender.com/](https://shortendurl-backend.onrender.com/)
+- **Database**: MongoDB Atlas (Cloud)
+
+### Deploying Your Own Instance
+
+#### Frontend (Client) - Vercel:
 1. **Build the React application:**
    ```bash
    cd client
    npm run build
    ```
-2. The build output will be in the `client/dist` directory. This can be deployed to static site hosting services like Vercel, Netlify, or GitHub Pages.
-3. **Important**: Update the `VITE_API_URL` environment variable on your hosting platform to point to your deployed backend URL.
+2. The build output will be in the `client/dist` directory.
+3. Connect your GitHub repository to Vercel.
+4. **Environment Variables on Vercel:**
+   - `VITE_API_URL`: Set to your deployed backend URL (e.g., `https://your-backend-url.onrender.com`)
 
-### Backend (Server):
-1. The Node.js/Express backend can be deployed to platforms like Render, Heroku, DigitalOcean Droplets, or AWS EC2.
-2. **Important**:
-   - Update the `PORT` environment variable (if your hosting provider assigns a specific port).
-   - Update `MONGODB_URI` to your production MongoDB database.
-   - Update `BASE_URL` to your deployed backend URL.
-   - Update `JWT_SECRET` to a new, strong, and truly secret string.
-   - Update `CLIENT_URL` to your deployed frontend URL for CORS.
-   - **Security**: Ensure you manage `ADMIN_USERNAME` and `ADMIN_PASSWORD` securely and that the register-admin route is not publicly accessible in production.
+#### Backend (Server) - Render:
+1. Connect your GitHub repository to Render.
+2. **Environment Variables on Render:**
+   - `PORT`: Usually auto-assigned by Render
+   - `MONGODB_URI`: Your MongoDB Atlas connection string
+   - `BASE_URL`: Your deployed backend URL (e.g., `https://your-backend-url.onrender.com`)
+   - `JWT_SECRET`: A strong, unique secret string
+   - `ADMIN_USERNAME`: Your admin username
+   - `ADMIN_PASSWORD`: Your admin password
+   - `CLIENT_URL`: Your deployed frontend URL (e.g., `https://your-frontend-url.vercel.app`)
+
+#### Alternative Deployment Options:
+- **Frontend**: Netlify, GitHub Pages, Surge
+- **Backend**: Heroku, Railway, DigitalOcean App Platform, AWS EC2
 
 ## 10. Future Enhancements
 
@@ -400,6 +436,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For any questions or inquiries, feel free to reach out:
 
-- **Your Name**: Rahul Saini
-- **GitHub**: [link](https://github.com/Rahulsaini27)
+- **Name**: Rahul Saini
+- **GitHub**: [https://github.com/Rahulsaini27](https://github.com/Rahulsaini27)
+- **Repository**: [https://github.com/Rahulsaini27/shortendurl](https://github.com/Rahulsaini27/shortendurl)
 - **Email**: rahulsaini42854@gmail.com
+
+---
+
+⭐ **Star this repository if you found it helpful!**
