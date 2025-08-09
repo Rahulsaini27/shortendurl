@@ -8,27 +8,27 @@ const generateToken = (id) => {
 };
 
 //   Public are restricted in production 
-// const registerAdmin = async (req, res, next) => {
-//     const { username, password } = req.body;
+const registerAdmin = async (req, res, next) => {
+    const { username, password } = req.body;
 
-//     try {
-//         // Basic check to prevent multiple admins for this simple app
-//         const existingUser = await User.findOne({ username: 'admin' });
-//         if (existingUser) {
-//             return res.status(400).json({ message: 'Admin user already exists.' });
-//         }
+    try {
+        // Basic check to prevent multiple admins for this simple app
+        const existingUser = await User.findOne({ username: 'admin' });
+        if (existingUser) {
+            return res.status(400).json({ message: 'Admin user already exists.' });
+        }
 
-//         const user = await User.create({ username, password });
+        const user = await User.create({ username, password });
 
-//         res.status(201).json({
-//             message: 'Admin user registered successfully.',
-//             username: user.username,
-//             token: generateToken(user._id),
-//         });
-//     } catch (err) {
-//         next(err);
-//     }
-// };
+        res.status(201).json({
+            message: 'Admin user registered successfully.',
+            username: user.username,
+            token: generateToken(user._id),
+        });
+    } catch (err) {
+        next(err);
+    }
+};
 
 
 // access to Public
