@@ -13,10 +13,11 @@ connectDB();
 
 app.use(express.json());
 app.use(cors({
-    origin: ['https://shortendurl-767b.vercel.app', 'http://localhost:5173'],
+    origin: 'https://shortendurl-767b.vercel.app',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
 
 app.get('/', (req, res) => {
   res.send('Your server is live');
