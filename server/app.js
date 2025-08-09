@@ -13,9 +13,9 @@ connectDB();
 
 app.use(express.json());
 app.use(cors({
-    origin: process.env.NODE_ENV === 'production' ? process.env.CLIENT_URL : 'http://localhost:5173',
+    origin: ['https://shortendurl-767b.vercel.app', 'http://localhost:5173'],
     methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 app.get('/', (req, res) => {
